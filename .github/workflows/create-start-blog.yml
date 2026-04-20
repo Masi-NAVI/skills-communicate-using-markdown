@@ -1,0 +1,25 @@
+name: Create start-blog branch
+
+on:
+  push:
+    branches:
+      - copilot/add-web-construction-feature
+
+permissions:
+  contents: write
+
+jobs:
+  create_branch:
+    name: Create start-blog branch with day-1.md
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create and push start-blog branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -B start-blog
+          git push origin start-blog --force
