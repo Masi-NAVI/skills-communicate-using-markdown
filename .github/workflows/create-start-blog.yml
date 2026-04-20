@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create start-blog branch and push day-1.md
+      - name: Create and push start-blog branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
